@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Buy Items'),
     );
   }
 }
@@ -75,41 +75,240 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+      body: Container(
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+          children: <Widget> [
+            Expanded(
+                flex: 9,
+                child: ListView(
+                  shrinkWrap: true,
+                  padding: const EdgeInsets.all(24),
+                  children: <Widget>[
+                    Container(
+                      child: Card(
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+                        clipBehavior: Clip.antiAlias,
+                        elevation: 4,
+                        child: Container(
+                          height: 200,
+                          alignment: Alignment.center,
+                          child: Row(
+                            children: [
+                              Expanded(
+                                flex: 2,
+                                child: Padding(
+                                    padding: EdgeInsets.all(16),
+                                    child: Image(
+                                        image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg')
+                                    )
+                                ),
+                              ),
+                              Expanded(
+                                flex: 3,
+                                child: Padding(
+                                    padding: EdgeInsets.all(8),
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(16),
+                                          child: Text('Item 1', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8),
+                                          child: Row(
+                                            //crossAxisAlignment: CrossAxisAlignment.center,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              OutlinedButton(
+                                                  onPressed: (){},
+                                                  child: Text('-')
+                                              ),
+                                              Text('    1    '),
+                                              OutlinedButton(
+                                                  onPressed: (){},
+                                                  child: Text('+')
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                            padding: EdgeInsets.all(8),
+                                            child: OutlinedButton.icon(
+                                                onPressed: (){},
+                                                icon: Icon(Icons.add_shopping_cart, size: 24),
+                                                label: Text('Add to cart')
+                                            )
+                                        ),
+                                      ],
+                                    )
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                    ),
+                    Container(
+                      child: Card(
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+                        clipBehavior: Clip.antiAlias,
+                        elevation: 4,
+                        child: Container(
+                          height: 200,
+                          alignment: Alignment.center,
+                          child: Row(
+                            children: [
+                              Expanded(
+                                flex: 2,
+                                child: Padding(
+                                    padding: EdgeInsets.all(16),
+                                    child: Image(
+                                        image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg')
+                                    )
+                                ),
+                              ),
+                              Expanded(
+                                flex: 3,
+                                child: Padding(
+                                    padding: EdgeInsets.all(8),
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(16),
+                                          child: Text('Item 1', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8),
+                                          child: Row(
+                                            //crossAxisAlignment: CrossAxisAlignment.center,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              OutlinedButton(
+                                                  onPressed: (){},
+                                                  child: Text('-')
+                                              ),
+                                              Text('    1    '),
+                                              OutlinedButton(
+                                                  onPressed: (){},
+                                                  child: Text('+')
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                            padding: EdgeInsets.all(8),
+                                            child: OutlinedButton.icon(
+                                                onPressed: (){},
+                                                icon: Icon(Icons.add_shopping_cart, size: 24),
+                                                label: Text('Add to cart')
+                                            )
+                                        ),
+                                      ],
+                                    )
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                    ),
+                    Container(
+                      child: Card(
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+                        clipBehavior: Clip.antiAlias,
+                        elevation: 4,
+                        child: Container(
+                          height: 200,
+                          alignment: Alignment.center,
+                          child: Row(
+                            children: [
+                              Expanded(
+                                flex: 2,
+                                child: Padding(
+                                    padding: EdgeInsets.all(16),
+                                    child: Image(
+                                        image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg')
+                                    )
+                                ),
+                              ),
+                              Expanded(
+                                flex: 3,
+                                child: Padding(
+                                    padding: EdgeInsets.all(8),
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(16),
+                                          child: Text('Item 1', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(8),
+                                          child: Row(
+                                            //crossAxisAlignment: CrossAxisAlignment.center,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              OutlinedButton(
+                                                  onPressed: (){},
+                                                  child: Text('-')
+                                              ),
+                                              Text('    1    '),
+                                              OutlinedButton(
+                                                  onPressed: (){},
+                                                  child: Text('+')
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                            padding: EdgeInsets.all(8),
+                                            child: OutlinedButton.icon(
+                                                onPressed: (){},
+                                                icon: Icon(Icons.add_shopping_cart, size: 24),
+                                                label: Text('Add to cart')
+                                            )
+                                        ),
+                                      ],
+                                    )
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                    )
+                  ],
+                )
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            Divider(),
+            Expanded(
+                flex: 1,
+                child: Container(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        onPressed: (){},
+                        icon: Icon(Icons.navigate_before, size: 24),
+                      ),
+                      Text('      Page 1 of 5     '),
+                      IconButton(
+                        onPressed: (){},
+                        icon: Icon(Icons.navigate_next, size: 24),
+                      )
+                    ],
+                  ),
+                )
+            )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
